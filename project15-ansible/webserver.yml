@@ -1,0 +1,21 @@
+---
+- name: Install and configure Nginx web server
+  hosts: localhost
+  connection: local
+  become: yes
+  tasks:
+    - name: Install Nginx
+      dnf:
+        name: nginx
+        state: present
+
+    - name: Deploy custom index.html
+      copy:
+        content: "<h1>Capstone Project 15: Configured with Ansible via SSM!</h1>"
+        dest: /usr/share/nginx/html/index.html
+
+    - name: Start and enable Nginx
+      service:
+        name: nginx
+        state: started
+        enabled: yes

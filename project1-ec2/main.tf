@@ -84,3 +84,4 @@ resource "aws_instance" "web" {
 output "website_url" {
   value = "http://${aws_instance.web.public_ip}"
 }
+# Project 11: Infra change via feature branch and PR review

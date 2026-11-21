@@ -84,3 +84,4 @@ resource "aws_instance" "web" {
 output "website_url" {
   value = "http://${aws_instance.web.public_ip}"
 }
+# This is project 6 tracked terraform update via Git feature branch
